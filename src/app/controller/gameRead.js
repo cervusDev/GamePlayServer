@@ -19,9 +19,5 @@ router.get('/:id', async (req, res) => {
 
 });
 
-router.get('/', async (req,res) => {
-  const filmes = await Games.find();
-  res.send({ filmes });
-})
 
 module.exports = server => server.use("/games", router);
