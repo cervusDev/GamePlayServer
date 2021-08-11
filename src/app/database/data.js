@@ -4,7 +4,8 @@ const url = "mongodb://localhost:27017/gameplay";
 const params = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  useCreateIndex: true 
+  useCreateIndex: true,
+  useFindAndModify: false
 }
 
 mongoose.connect(url, params);

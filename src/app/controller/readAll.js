@@ -4,8 +4,8 @@ const Games = require("../models/game");
 const router = express.Router();
 
 router.get('/', async (req,res) => {
-  const filmes = await Games.find();
-  res.send({ filmes });
+  const games = await Games.find();
+  res.send({ games });
 })
 
 module.exports = server => server.use('/games', router);

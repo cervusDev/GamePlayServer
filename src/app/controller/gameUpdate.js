@@ -12,19 +12,25 @@ router.put("/:id", async (req, res) => {
   } = req.body;
 
   try {
-    const game = await Games.findByIdAndUpdate(id, req.body)
+    const game = await Games.findOneAndUpdate(id)
     
-    if (!game) 
-      return res.status(404).send({ error: 'Game not found' })
+    if (!game) {
+      return res.status(404).send({ error: 'Game not found' });
+
+    }
     
-    if (name || match || host || date || image)
+    if (name || match || host || date || image) {
       game.name = name;
       game.match = match;
       game.host = host;
       game.date = date;
       game.image = image;
 
-    return res.send({ message: 'secessfuly' , gamer}) ;
+    };
+
+    await game.save();
+    return res.send({ game });
+
   } catch {
     return res.status(500).send({ error: 'Empty body requisition' })
   };
