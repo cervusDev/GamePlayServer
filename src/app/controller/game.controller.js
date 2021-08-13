@@ -6,7 +6,7 @@ const GameService = new service();
 class GameController {
     async getGames(req,res) {
         const game = await GameService.findAll();
-        res.send( game )
+        res.send(game)
     }
 
     async getGamesById(req, res) {

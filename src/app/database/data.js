@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const url = "mongodb://localhost:27017/gameplay";
+const url = "mongodb+srv://gucervus:NSYd1ThxT4WrdSTU@gameplay.xbukn.mongodb.net/test";
 const params = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
